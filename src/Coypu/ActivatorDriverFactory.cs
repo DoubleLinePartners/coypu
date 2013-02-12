@@ -26,7 +26,7 @@ namespace Coypu
         public Driver NewWebDriver(Type driverType, Drivers.Browser browser, IDictionary<Browser, object> browserOptions)
         {
             // Look for constructor on target driver type that accepts browserOptions argument
-            var constructor = driverType.GetConstructor(new Type[] { typeof(Type), typeof(Browser), typeof(IDictionary<Browser, object>) });
+            var constructor = driverType.GetConstructor(new [] { typeof(Browser), typeof(IDictionary<Browser, object>) });
 
             // If no matching constructor exists, use other factory method
             if (constructor == null)
